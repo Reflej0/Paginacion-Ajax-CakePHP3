@@ -1,0 +1,43 @@
+2017-05-19 17:54:42 Error: [PDOException] SQLSTATE[HY000] [1045] Access denied for user 'my_app'@'localhost' (using password: YES) in C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php on line 48
+Stack Trace:
+#0 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Driver\PDODriverTrait.php(48): PDO->__construct('mysql:host=loca...', 'my_app', 'secret', Array)
+#1 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Driver\Mysql.php(104): Cake\Database\Driver\Mysql->_connect('mysql:host=loca...', Array)
+#2 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\BaseSchema.php(45): Cake\Database\Driver\Mysql->connect()
+#3 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Dialect\MysqlDialectTrait.php(63): Cake\Database\Schema\BaseSchema->__construct(Object(Cake\Database\Driver\Mysql))
+#4 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(52): Cake\Database\Driver\Mysql->schemaDialect()
+#5 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(42): Cake\Database\Schema\Collection->__construct(Object(Cake\Database\Connection))
+#6 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Connection.php(367): Cake\Database\Schema\CachedCollection->__construct(Object(Cake\Database\Connection), true)
+#7 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Connection.php(386): Cake\Database\Connection->getSchemaCollection()
+#8 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(959): Cake\Database\Connection->schemaCollection()
+#9 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(911): Bake\Shell\Task\ModelTask->_getAllTables()
+#10 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(926): Bake\Shell\Task\ModelTask->listAll()
+#11 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\BakeShell.php(237): Bake\Shell\Task\ModelTask->listUnskipped()
+#12 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(458): Bake\Shell\BakeShell->all()
+#13 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#14 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#15 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#16 C:\xampp\htdocs\cake\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#17 {main}
+
+
+2017-05-19 17:58:23 Error: [Cake\Database\Exception] SQLSTATE[42S02]: Base table or view not found: 1146 Table 'test.models' doesn't exist in C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php on line 131
+Stack Trace:
+#0 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\Collection.php(97): Cake\Database\Schema\Collection->_reflect('Column', 'models', Array, Object(Cake\Database\Schema\TableSchema))
+#1 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Database\Schema\CachedCollection.php(63): Cake\Database\Schema\Collection->describe('models', Array)
+#2 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\ORM\Table.php(531): Cake\Database\Schema\CachedCollection->describe('models')
+#3 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\ORM\Table.php(652): Cake\ORM\Table->getSchema()
+#4 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(215): Cake\ORM\Table->getPrimaryKey()
+#5 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(127): Bake\Shell\Task\ModelTask->getAssociations(Object(Cake\ORM\Table))
+#6 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(110): Bake\Shell\Task\ModelTask->getTableContext(Object(Cake\ORM\Table), 'models', 'Models')
+#7 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\Task\ModelTask.php(97): Bake\Shell\Task\ModelTask->bake('Models')
+#8 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\BakeShell.php(257): Bake\Shell\Task\ModelTask->main('Models')
+#9 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Collection\CollectionTrait.php(51): Bake\Shell\BakeShell->Bake\Shell\{closure}('models', 0)
+#10 C:\xampp\htdocs\cake\vendor\cakephp\bake\src\Shell\BakeShell.php(258): Cake\Collection\Collection->each(Object(Closure))
+#11 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\Shell.php(458): Bake\Shell\BakeShell->all('models')
+#12 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(230): Cake\Console\Shell->runCommand(Array, true, Array)
+#13 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(182): Cake\Console\ShellDispatcher->_dispatch(Array)
+#14 C:\xampp\htdocs\cake\vendor\cakephp\cakephp\src\Console\ShellDispatcher.php(128): Cake\Console\ShellDispatcher->dispatch(Array)
+#15 C:\xampp\htdocs\cake\bin\cake.php(34): Cake\Console\ShellDispatcher::run(Array)
+#16 {main}
+
+
